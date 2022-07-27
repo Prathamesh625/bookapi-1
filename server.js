@@ -15,7 +15,7 @@ app.use(express.json());
 //mongo = "mongodb://localhost/database";
 
 mongo =
-  "mongodb+srv://625PrathameshAdmin:sLQzhiZkszKVQuca@bookcluster.o6gck.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://625PrathameshAdmin:sLQzhiZkszKVQuca@bookcluster.o6gck.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(mongo, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
