@@ -31,5 +31,5 @@ app.get("/booklist", async (req, res) => {
 
 app.use("/new", require("./users"));
 app.use("/book", require("./books"));
-app.use("/payments", require("../bookapi-1/payment"));
+app.use("/payments", require("./payment"));
 app.listen(PORT, console.log("working succesfully at " + PORT));
