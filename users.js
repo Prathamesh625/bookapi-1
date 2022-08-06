@@ -88,6 +88,8 @@ router.post("/emailUpdation", async (req, res) => {
   res.json(update);
 });
 
+/*
+
 router.post("/purchased", async (req, res) => {
   const purchased = await userSchema.findByIdAndUpdate(
     { _id: req.body._id },
@@ -100,6 +102,7 @@ router.post("/purchased", async (req, res) => {
   res.json(purchased);
 });
 
+*/
 router.post("/login", async (req, res) => {
   const userLogin = await userSchema.findOne({
     email: req.body.email,
