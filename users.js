@@ -11,6 +11,10 @@ router.get("/users", async (req, res) => {
   const userlist = await userSchema.find();
   res.json(userlist);
 });
+router.get("/:id", async (req, res) => {
+  const user = await userSchema.findById(req.params.id);
+  res.json(user);
+});
 
 router.get("/userSort", async (req, res) => {
   const userlist = await userSchema.find().sort({ fname: 1, lname: 1 });
