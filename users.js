@@ -1,11 +1,15 @@
 const express = require("express");
 const shortid = require("short-id");
 const nodemailer = require("nodemailer");
+const accountSid = "AC24ab154f1508ebd2f389ec9d5c33e3d2";
+const authToken = "0871f381b7ece7e13ebf31472caf5268";
+const twilio = require("twilio")(accountSid, authToken);
 
 const router = express.Router();
 const userSchema = require("./user");
 
 const { deleteMany, updateOne, findByIdAndUpdate } = require("./Schema");
+const { messages, sendMessageFun } = require("./MessagingService");
 
 router.get("/users", async (req, res) => {
   const userlist = await userSchema.find();
@@ -67,6 +71,19 @@ router.post("/data", async (req, res) => {
       console.log("Email sented succesfully" + info.response);
     }
   });
+
+  try {
+    const sendMessage = await twilio.messages.create({
+      body: `Your OTP for verification of Bookstore is ${id}`,
+      from: "+19123015531",
+      to: `+91${Save.Mobile}`,
+    });
+
+    console.log(sendMessage);
+    res.json(sendMessage);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.post("/verification", async (req, res) => {
