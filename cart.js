@@ -1,18 +1,7 @@
 const express = require("express");
 
-const cartSchema = require("./cartSchema");
-
 const userSchema = require("./user");
 const router = express.Router();
-
-router.get("/myCart/all/items", async (req, res) => {
-  try {
-    const cart = await cartSchema.find();
-    res.json(cart);
-  } catch (error) {
-    console.log(error);
-  }
-});
 
 router.get("/:id/myCart/all/items", async (req, res) => {
   try {
