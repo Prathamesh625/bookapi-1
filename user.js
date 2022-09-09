@@ -11,6 +11,7 @@ const userSchema = new mongoose.Schema({
   code: String,
   date: { type: Date, default: Date.now },
   orderedHistory: [],
+  cart: [],
 });
 
 module.exports = mongoose.model("schema", userSchema);

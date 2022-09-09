@@ -1,11 +1,19 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-  personName: {
-    type: String,
-  },
   personId: {
     type: String,
+    required: true,
+  },
+  personName: {
+    type: String,
+    required: true,
+  },
+  personEmail: {
+    type: String,
+  },
+  personMobileNo: {
+    type: Number,
     required: true,
   },
   personAddress: {
@@ -20,9 +28,11 @@ const orderSchema = new mongoose.Schema({
   payment: {
     success: {
       type: Boolean,
+      required: true,
     },
     amount: {
       type: String,
+      required: true,
     },
   },
 

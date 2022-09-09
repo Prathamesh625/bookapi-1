@@ -1,5 +1,4 @@
 const express = require("express");
-
 const schema = require("./Schema");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -34,4 +33,5 @@ app.use("/book", require("./books"));
 app.use("/messages", require("./MessagingService"));
 app.use("/orders", require("./orders"));
 app.use("/payments", require("./payment"));
+app.use("/cart", require("./cart"));
 app.listen(PORT, console.log("working succesfully at " + PORT));
