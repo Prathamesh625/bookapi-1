@@ -37,14 +37,7 @@ router.put("/:id/update/cart", async (req, res) => {
   }
 });
 
-router.get("/:id/myCart/get/items", async (req, res) => {
-  try {
-    const cart = await cartSchema.findById(req.params.id);
-    res.json(cart.cart);
-  } catch (error) {
-    console.log(error);
-  }
-});
+/*
 
 router.put("/:id/update/cart", async (req, res) => {
   const id = await cartSchema.findOne({
@@ -70,6 +63,7 @@ router.put("/:id/update/cart", async (req, res) => {
     }
   }
 });
+
 
 router.delete("/:id/myCart/items/delete", async (req, res) => {
   try {
@@ -99,5 +93,7 @@ router.delete("/myCart/items/deleteMany", async (req, res) => {
     res.json(error);
   }
 });
+
+*/
 
 module.exports = router;
