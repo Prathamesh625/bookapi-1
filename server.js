@@ -5,22 +5,13 @@ const mongoose = require("mongoose");
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-/*
+
 app.use(
   cors({
-    origin: "*",
+    origin: "https://bookstore-v6.netlify.app",
   })
 );
 
-*/
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 app.use(express.json());
 //mongo = "mongodb://localhost/database";
 
